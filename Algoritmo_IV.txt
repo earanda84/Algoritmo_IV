@@ -1,0 +1,81 @@
+/*Algoritmo IV*/
+
+//1.-Dados un array y un valor Y, cuenta e imprime (print) el número de valores del array que sean mayores que Y. 
+
+function mayorQueY() {
+    var arreglo = [1, 5, 6, 9, 10];
+    var y = 3;
+
+    for (var i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > y) {
+            console.log('numeros mayores que Y: ', arreglo[i]);
+        }
+    }
+    return ('Este es el valor de "Y": ' + y);
+}
+console.log(mayorQueY());
+
+----------------------------------------------------------------------------------------------------------------
+//2.-Dado un array, imprime los valores máximos (max), mínimos (min) y promedio (average) para el array. 
+
+function maxMinProm(x) {
+    var max = x[0];
+    var min = x[0];
+    var suma = 0;
+
+    for (var i = 0; i < x.length; i++) {
+        if (min > x[i]) {
+            min = x[i];
+        }
+        if (max < x[i]) {
+            max = x[i];
+        }
+        suma += x[i];
+    }
+    return ('El Máximo es: ' + max) + " / " + ('El Mínimo es: ' + min) + " / " + ('El Promedio es: ' + suma / x.length);
+}
+console.log(maxMinProm([1, 5, 7, 9, 11]));
+
+------------------------------------------------------------------------------------------------------------------------------
+//3.-Dado un array de números, crea una función que dé como resultado un nuevo array donde los valores negativos se reemplacen
+ por el texto (string) ‘Dojo’. Por ejemplo, reemplazarNegativos([1,2,-3,-5,5]) debiera devolver [1,2, “Dojo”, “Dojo”, 5].
+
+function negText(x) {
+    for (var i = 0; i < x.length; i++) {
+        if (x[i] < 0) {
+            x[i] = 'Dojo';
+        }
+    }
+    return x;
+
+}
+console.log(negText([1, 2, -3, -5, 5]));
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+//4.-
+Dado un array y su respectivo índice, remueve los valores en el rango del índice dado( acortando el array). Por ejemplo, 
+removerRango([20,30,40,50,60,70],2,4)debiera devolver [20,30,70].
+
+function removerRango(x, y, z) {
+    var newRango = [];
+
+    for (var i = 0; i < x.length; i++) {
+        if (!(i >= y && i <= z)) {
+            newRango.push(x[i]);
+        }
+    }
+    return newRango;
+
+}                                       //x        y  z
+console.log(removerRango([20, 30, 40, 50, 60, 70], 2, 4));
+
+
+
+
+
+
+
+
+
+
